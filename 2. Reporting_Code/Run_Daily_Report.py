@@ -1,5 +1,5 @@
 ghfm_reporting_dir = "./"
-repo_path = r"C:\Users\Guarav\OneDrive - Golden Horse Fund Management Pte. Ltd\Investments Team\GHFM-Daily-Portfolio-Reporting"
+repo_path = r"C:\Users\Guarav\OneDrive - Golden Horse Fund Management Pte. Ltd\Investments Team\GHFM-Daily-Portfolio-Reporting-Automated"
 
 from Report_Module_Automated import PortfolioReportingFramework
 reporter = PortfolioReportingFramework(ghfm_reporting_dir, repo_path)
