@@ -45,10 +45,12 @@ It includes:
 ## Requirements  
 
 - **Python 3.9+**  
-- Packages:  
+- Install the required Python packages (including GitPython for the repository update step):
 ```bash
-pip install pandas numpy pywin32 xlsxwriter streamlit plotly openpyxl
+python -m pip install -r requirements.txt
 ```  
+
+The Git executable must also be installed and available on `PATH`; installing Git alone does not install the GitPython Python package.
 
 - Access to:  
   - IBKR daily statements  
