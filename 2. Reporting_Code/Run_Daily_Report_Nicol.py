@@ -1,9 +1,11 @@
 import os
 import sys
-from git import Repo
+
 
 # 1. Force Python to find Git (Fixes Step 4 executable issue)
 os.environ["GIT_PYTHON_GIT_EXECUTABLE"] = r"C:\Program Files\Git\cmd\git.exe"
+
+from git import Repo
 
 # 2. Automatically find the correct project paths relative to this file
 # This finds the root folder "GHFM-Daily-Portfolio-Reporting-Automated"
