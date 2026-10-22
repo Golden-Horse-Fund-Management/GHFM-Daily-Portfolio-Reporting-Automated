@@ -1,5 +1,27 @@
-ghfm_reporting_dir = "./"
-repo_path = r"C:\Users\Golden Horse\OneDrive - Golden Horse Fund Management Pte. Ltd (1)\Investment Team's files - Investments Team\GHFM-Daily-Portfolio-Reporting-Automated"
+import os
+import sys
+from git import Repo
+
+# 1. Force Python to find Git (Fixes Step 4 executable issue)
+os.environ["GIT_PYTHON_GIT_EXECUTABLE"] = r"C:\Program Files\Git\cmd\git.exe"
+
+# 2. Automatically find the correct project paths relative to this file
+# This finds the root folder "GHFM-Daily-Portfolio-Reporting-Automated"
+repo_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ghfm_reporting_dir = repo_path
+
+# 3. Add the code directory to Python's search path so it can find your module
+sys.path.append(os.path.join(repo_path, "2. Reporting_Code"))
+
+# 4. Import your automated framework module
+from Report_Module_Automated import PortfolioReportingFramework
+
+# 5. Initialize and run the report
+reporter = PortfolioReportingFramework(ghfm_reporting_dir, repo_path)
+reporter.run_complete_daily_report()
+
+
+repo = Repo(root_dir)
 
 from Report_Module_Automated import PortfolioReportingFramework
 reporter = PortfolioReportingFramework(ghfm_reporting_dir, repo_path)
